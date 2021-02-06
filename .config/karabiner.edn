@@ -1,0 +1,98 @@
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any
+
+{
+  :profiles {:Default {:default true :sim 200 :delay 500 :alone 500 :held 500}}
+  :templates {
+    :open "open \"%s\""
+    :paste "osascript -e '
+                        set the clipboard to \"%s\"
+                        tell application \"System Events\"
+                                keystroke \"v\" using command down
+                        end tell
+                '"
+  }
+  :layers {:caps-mode {:key :caps_lock :alone {:key :escape}}}
+  :simlayers {
+              :launch-mode {:key :z}
+              :emoji-mode {:key :e}
+              :screen-capture {:key :m}
+              :toggle-mode {:key :t}
+  }
+  :tos {
+    :emoji_picker {:key :spacebar :modi [:control :command]}
+  }
+  :main [
+    {
+      :des "Single key remaps"
+      :rules [
+        [:page_up :fn]
+      ]
+    }
+    {
+      :des "modifications for magnet"
+      :rules [
+        [:home {:key :left_control :modi :left_option}]
+        [:end {:key :left_command :modi [:left_control :left_option]}]
+      ]
+    }
+    {
+     :des "emoji-mode"
+     :rules [
+       :emoji-mode
+        [:p [:emoji_picker]] ; p
+      ]
+     }
+    {
+      :des "toggle-mode"
+      :rules [
+        :toggle-mode
+        [:d {:key :d :modi [:left_command :left_option]}]
+      ]
+    }
+    {
+      :des "screen-capture"
+      :rules [
+        :screen-capture
+        [:z [:!CTOSz]] ; Capture Fullscreen in CleanShot
+        [:x [:!CTOx]] ; Capture Area in CleanShot
+        [:w [:!CTOw]] ; Capture Window
+        [:v [:!CTOSv]] ; Record video in CleanShot
+        [:s [:!CTOSs]] ; Capture Scroll Area in CleanShot
+      ]
+    }
+    {
+      :des "launch-mode" ; z + key held at the same time
+      :rules [
+        :launch-mode
+        [:g [:open "/Applications/Google Chrome.app"]]
+        [:a [:open "/Applications/Alacritty.app"]]
+        [:d [:open "/Applications/Discord.app"]]
+        [:s [:open "/Applications/Spotify.app"]]
+        [:b [:open "/Applications/Brave Browser.app"]]
+        [:c [:open "/Applications/Visual Studio Code.app"]]
+        [:p [:open "/Applications/1Password 7.app"]]
+      ]
+    }
+    {
+      :des "caps-mode"
+      :rules [
+        :caps-mode
+        [:h :left_arrow]
+        [:j :down_arrow]
+        [:k :up_arrow]
+        [:l :right_arrow]
+      ]
+    }
+  ]}
