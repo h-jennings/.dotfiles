@@ -51,7 +51,7 @@
      :des "emoji-mode"
      :rules [
        :emoji-mode
-        [:p [:emoji_picker]] ; p
+        [:p [:emoji_picker]] ; This launches an emoji picker
       ]
      }
     {
