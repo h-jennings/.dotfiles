@@ -1,0 +1,5 @@
+- alacritty
+- goku
+- htop
+- neovim
+- tmux
