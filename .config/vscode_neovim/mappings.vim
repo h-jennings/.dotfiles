@@ -50,6 +50,8 @@ xnoremap <leader>w <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
 xnoremap <leader>w <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
 nnoremap <leader>q <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
 xnoremap <leader>q <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
+nnoremap <leader>cg <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
+xnoremap <leader>cg <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
 nnoremap <leader>to <Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>
 xnoremap <leader>to <Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>
 
