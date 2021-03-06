@@ -58,6 +58,7 @@ xnoremap <leader>to <Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')
 " Code actions
 nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 nnoremap gy <Cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
+nnoremap gH <Cmd>call VSCodeNotify('editor.action.showDefinitionPreviewHover')<CR>
 nnoremap <leader>d <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
 xnoremap <leader>d <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
 nnoremap <leader>gn <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
