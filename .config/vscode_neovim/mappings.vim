@@ -19,31 +19,6 @@ vnoremap > >gv
 
 nnoremap <leader>/ :nohlsearch<CR>
 
-" Better window navigation
-" Left
-nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
-xnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
-nnoremap <C-w>H <Cmd>call VSCodeNotify('workbench.action.moveActiveEditorGroupLeft')<CR>
-xnoremap <C-w>H <Cmd>call VSCodeNotify('workbench.action.moveActiveEditorGroupLeft')<CR>
-
-" Right
-nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
-xnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
-nnoremap <C-w>L <Cmd>call VSCodeNotify('workbench.action.moveActiveEditorGroupRight')<CR>
-xnoremap <C-w>L <Cmd>call VSCodeNotify('workbench.action.moveActiveEditorGroupRight')<CR>
-
-" Down
-nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
-xnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
-nnoremap <C-w>J <Cmd>call VSCodeNotify('workbench.action.moveActiveEditorGroupDown')<CR>
-xnoremap <C-w>J <Cmd>call VSCodeNotify('workbench.action.moveActiveEditorGroupDown')<CR>
-
-" Up
-nnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
-xnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
-nnoremap <C-w>K <Cmd>call VSCodeNotify('workbench.action.moveActiveEditorGroupUp')<CR>
-xnoremap <C-w>K <Cmd>call VSCodeNotify('workbench.action.moveActiveEditorGroupUp')<CR>
-
 " File actions
 nnoremap <leader>w <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
 xnoremap <leader>w <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
