@@ -80,6 +80,23 @@ xnoremap <leader>gs <Cmd>call VSCodeNotify('workbench.scm.focus')<CR>
 nnoremap <leader>` <Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
 xnoremap <leader>` <Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
 
+" Better window navigation
+" Left
+nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
+xnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
+
+" Right
+nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
+xnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
+
+" Down
+nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
+xnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
+
+" Up
+nnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
+xnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
+
 
 " Commenting
 xmap gc  <Plug>VSCodeCommentary
