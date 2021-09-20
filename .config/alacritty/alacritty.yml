@@ -78,3 +78,8 @@ selection:
   save_to_clipboard: true
 
 live_config_reload: true
+
+key_bindings:
+  - { key: Key0,     mods: Command, action: ResetFontSize                }
+  - { key: Equals,   mods: Command, action: IncreaseFontSize             }
+  - { key: Minus,    mods: Command, action: DecreaseFontSize             }
