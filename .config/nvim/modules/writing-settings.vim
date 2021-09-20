@@ -5,6 +5,9 @@ function! Prose()
   setlocal nosmartindent
   setlocal indentexpr=
   setlocal spell! spelllang=en_us
+  colorscheme pencil
+  setlocal background=light
+  let g:airline_theme = 'pencil'
 endfunction
 
 let g:pencil#wrapModeDefault = 'soft'
