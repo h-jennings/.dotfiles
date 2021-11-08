@@ -26,7 +26,6 @@
   :layers {:caps-mode {:key :caps_lock :alone {:key :escape}}}
   :simlayers {
               :launch-mode {:key :z}
-              :emoji-mode {:key :e}
               :screen-capture {:key :m}
               :toggle-mode {:key :t}
   }
@@ -40,20 +39,6 @@
         [:page_up :fn]
       ]
     }
-    {
-      :des "modifications for magnet"
-      :rules [
-        [:home {:key :left_control :modi :left_option}]
-        [:end {:key :left_command :modi [:left_control :left_option]}]
-      ]
-    }
-    {
-     :des "emoji-mode"
-     :rules [
-       :emoji-mode
-        [:p [:emoji_picker]] ; This launches an emoji picker
-      ]
-     }
     {
       :des "toggle-mode"
       :rules [
@@ -77,10 +62,8 @@
       :rules [
         :launch-mode
         [:g [:open "/Applications/Google Chrome.app"]]
-        [:a [:open "/Applications/Alacritty.app"]]
         [:d [:open "/Applications/Discord.app"]]
         [:s [:open "/Applications/Spotify.app"]]
-        [:b [:open "/Applications/Brave Browser.app"]]
         [:c [:open "/Applications/Visual Studio Code.app"]]
         [:p [:open "/Applications/1Password 7.app"]]
       ]
