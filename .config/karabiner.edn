@@ -28,6 +28,7 @@
               :launch-mode {:key :z}
               :screen-capture {:key :m}
               :toggle-mode {:key :t}
+              :window-mode {:key :w}
   }
   :tos {
     :emoji_picker {:key :spacebar :modi [:control :command]}
@@ -44,6 +45,19 @@
       :rules [
         :toggle-mode
         [:d {:key :d :modi [:left_command :left_option]}]
+      ]
+    }
+    {
+      :des "window-mode"
+      :rules [
+        :window-mode
+        [:l {:key :right_arrow :modi [:control :left_option]}]
+        [:h {:key :left_arrow :modi [:control :left_option]}]
+        [:k {:key :up_arrow :modi [:control :left_option]}]
+        [:j {:key :down_arrow :modi [:control :left_option]}]
+        [:c {:key :c :modi [:control :left_option]}]
+        [:m {:key :return_or_enter :modi [:control :left_option]}]
+        [:r {:key :delete_or_backspace :modi [:control :left_option]}]
       ]
     }
     {
