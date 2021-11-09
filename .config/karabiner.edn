@@ -51,6 +51,8 @@
       :des "window-mode"
       :rules [
         :window-mode
+        [:p {:key :left_arrow :modi [:control :left_option :right_command]}]
+        [:n {:key :right_arrow :modi [:control :left_option :right_command]}]
         [:l {:key :right_arrow :modi [:control :left_option]}]
         [:h {:key :left_arrow :modi [:control :left_option]}]
         [:k {:key :up_arrow :modi [:control :left_option]}]
