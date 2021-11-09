@@ -1,7 +1,5 @@
-" Plugins
+"brew install fd Plugins
 source $HOME/.config/nvim/modules/plugins.vim
-" FZF
-source $HOME/.config/nvim/modules/fzf.vim
 "Keymappings
 source $HOME/.config/nvim/modules/mappings.vim
 " General vim stuff
@@ -12,8 +10,6 @@ source $HOME/.config/nvim/modules/themes.vim
 source $HOME/.config/nvim/modules/airline.vim
 " Startify
 source $HOME/.config/nvim/modules/start-screen.vim
-" Inline Edit
-source $HOME/.config/nvim/modules/inline-edit.vim
 " Close tag
 source $HOME/.config/nvim/modules/close-tag.vim
 " Emmet Vim

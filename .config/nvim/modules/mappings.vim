@@ -27,8 +27,6 @@ nnoremap K 5k
 " Remapping search to use 'very magic' by default
 nnoremap / /\v
 vnoremap / /\v
-" triggers inline edit plugin
-nnoremap <leader>e :InlineEdit<CR>
 " Tabs
 nnoremap <leader>tt :tabnew<CR>
 nnoremap <leader>] :tabnext<CR>
@@ -44,20 +42,14 @@ nnoremap <leader>o <C-^>
 " Only buffer
 nnoremap <leader>O :on<CR>
 
-" Left and right can switch buffers
-" nnoremap <left> :bp<CR>
-" nnoremap <right> :bn<CR>
-
 nnoremap <leader>td :set background=dark<CR>
 nnoremap <leader>tl :set background=light<CR>
-nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fw :BLines<CR>
-nnoremap <leader>pfw :Rg<Space>
-nnoremap <silent> <leader>` :Marks<CR>
-nnoremap <C-b> :Buffers<CR>
-nnoremap <C-g> :BCommits<CR>
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fw <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>pfw <cmd>Telescope live_grep<cr>
 nnoremap <leader>/ :nohlsearch<CR>
-nnoremap <leader>u :UndotreeShow<CR>
 " Better window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -81,8 +73,6 @@ nnoremap <silent> <C-Up> :res +3<CR>
 map <leader>nt :vnew term://zsh<CR>
 
 " Terminal
-" Uses default <Esc> behavior if fzf
-tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 tnoremap <M-[> <Esc>
 tnoremap <C-v><Esc> <Esc>
 
