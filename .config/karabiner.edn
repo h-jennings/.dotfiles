@@ -13,7 +13,7 @@
 ;; ## | optional any
 
 {
-  :profiles {:Default {:default true :sim 200 :delay 500 :alone 500 :held 500}}
+  :profiles {:Default {:default true :sim 500 :delay 600 :alone 600 :held 600}}
   :templates {
     :open "open \"%s\""
     :paste "osascript -e '
@@ -23,7 +23,10 @@
                         end tell
                 '"
   }
-  :layers {:caps-mode {:key :caps_lock :alone {:key :escape}}}
+  :layers {
+           :caps-mode {:key :caps_lock :alone {:key :escape}}
+           :media-mode {:key :v :alone {:key :v}}
+  }
   :simlayers {
               :launch-mode {:key :z}
               :screen-capture {:key :m}
@@ -48,18 +51,29 @@
       ]
     }
     {
+      :des "media-mode"
+      :rules [
+        :media-mode
+        [:k :volume_increment]
+        [:j :volume_decrement]
+        [:m :mute]
+      ]
+    }
+    {
       :des "window-mode"
       :rules [
         :window-mode
-        [:p {:key :left_arrow :modi [:control :left_option :right_command]}]
-        [:n {:key :right_arrow :modi [:control :left_option :right_command]}]
-        [:l {:key :right_arrow :modi [:control :left_option]}]
-        [:h {:key :left_arrow :modi [:control :left_option]}]
-        [:k {:key :up_arrow :modi [:control :left_option]}]
-        [:j {:key :down_arrow :modi [:control :left_option]}]
-        [:c {:key :c :modi [:control :left_option]}]
-        [:m {:key :return_or_enter :modi [:control :left_option]}]
-        [:r {:key :delete_or_backspace :modi [:control :left_option]}]
+        [:p {:key :left_arrow :modi [:control :left_option :right_command]}] ;; previous window
+        [:n {:key :right_arrow :modi [:control :left_option :right_command]}] ;; next window
+        [:l {:key :right_arrow :modi [:control :left_option]}] ;; right
+        [:h {:key :left_arrow :modi [:control :left_option]}] ;; left
+        [:k {:key :up_arrow :modi [:control :left_option]}] ;; up 
+        [:j {:key :down_arrow :modi [:control :left_option]}] ;; down
+        [:c {:key :c :modi [:control :left_option]}] ;; center
+        [:m {:key :return_or_enter :modi [:control :left_option]}] ;; maximize
+        [:r {:key :delete_or_backspace :modi [:control :left_option]}] ;; reset
+        [:y {:key :mission_control }];; mission control
+        [:e {:key :down_arrow :modi [:control] }];; app expose
       ]
     }
     {
