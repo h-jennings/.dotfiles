@@ -1,0 +1,16 @@
+# /Users/hunterjennings/.config/tmuxinator/audible-brand-guide.yml
+
+name: audible-lp
+root: ~/repos/work/audible-landing-pages/
+
+# start session with this window open
+startup_window: editor
+
+windows:
+  - lazygit: lg
+  - editor:
+      layout: c226,319x66,0,0{204x66,0,0,1,114x66,205,0[114x33,205,0,2,114x32,205,34,3]}
+      panes:
+        - v
+        -
+        -

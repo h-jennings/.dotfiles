@@ -1,46 +1,56 @@
-# Colors (Gruvbox Dark)
+env:
+  TERM: xterm-256color
+# Colors (Alabaster Dark)
 colors:
-  bright:
-    black: '#7f7061'
-    blue: '#719586'
-    cyan: '#7db669'
-    green: '#aab01e'
-    magenta: '#c77089'
-    red: '#f73028'
-    white: '#e6d4a3'
-    yellow: '#f7b125'
-  cursor:
-    cursor: '#e6d4a3'
-    text: '#1e1e1e'
-  normal:
-    black: '#1e1e1e'
-    blue: '#377375'
-    cyan: '#578e57'
-    green: '#868715'
-    magenta: '#a04b73'
-    red: '#be0f17'
-    white: '#978771'
-    yellow: '#cc881a'
+  # Default colors
   primary:
-    background: '#1e1e1e'
-    foreground: '#e6d4a3'
+    background: "#0e1415"
+    foreground: "#cecece"
+
+  # Cursor colors
+  cursor:
+    text: "#0e1415"
+    cursor: "#cd974b"
+
+  # Selection colors
   selection:
-    background: '#e6d4a3'
-    text: '#534a42'
-background_opacity: 1.0
+    text: "#000000"
+    background: "#293334"
+
+  # Normal colors
+  normal:
+    black: "#000000"
+    red: "#d2322d"
+    green: "#6abf40"
+    yellow: "#cd974b"
+    blue: "#217EBC"
+    magenta: "#9B3596"
+    cyan: "#178F79"
+    white: "#cecece"
+
+  # Bright colors
+  bright:
+    black: "#333333"
+    red: "#c33c33"
+    green: "#95cb82"
+    yellow: "#dfdf8e"
+    blue: "#71aed7"
+    magenta: "#cc8bc9"
+    cyan: "#47BEA9"
+    white: "#ffffff"
 
 font:
   normal:
-    family: 'JetBrainsMono Nerd Font Mono'
+    family: "JetBrainsMono Nerd Font"
     style: Regular
   bold:
-    family: 'JetBrainsMono Nerd Font Mono'
+    family: "JetBrainsMono Nerd Font"
     style: Bold
   italic:
-    family: 'JetBrainsMono Nerd Font Mono'
+    family: "JetBrainsMono Nerd Font"
     style: Italic
   bold_italic:
-    family: 'JetBrainsMono Nerd Font Mono'
+    family: "JetBrainsMono Nerd Font"
     style: Bold Italic
   # Point size
   size: 14.0
@@ -53,6 +63,10 @@ font:
     y: 0
 
 window:
+  opacity: 1
+  startup_mode: Maximized
+  title: Alacritty
+  dynamic_title: true
   padding:
     x: 2
     y: 2
@@ -76,6 +90,6 @@ selection:
 live_config_reload: true
 
 key_bindings:
-  - { key: Key0,     mods: Command, action: ResetFontSize                }
-  - { key: Equals,   mods: Command, action: IncreaseFontSize             }
-  - { key: Minus,    mods: Command, action: DecreaseFontSize             }
+  - { key: Key0, mods: Command, action: ResetFontSize }
+  - { key: Equals, mods: Command, action: IncreaseFontSize }
+  - { key: Minus, mods: Command, action: DecreaseFontSize }

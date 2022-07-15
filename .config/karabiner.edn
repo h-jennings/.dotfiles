@@ -13,7 +13,7 @@
 ;; ## | optional any
 
 {
-  :profiles {:Default {:default true :sim 500 :delay 600 :alone 600 :held 600}}
+  :profiles {:Default {:default true :sim 200 :delay 800 :alone 800 :held 800}}
   :templates {
     :open "open \"%s\""
     :paste "osascript -e '
@@ -25,7 +25,7 @@
   }
   :layers {
            :caps-mode {:key :caps_lock :alone {:key :escape}}
-           :media-mode {:key :v :alone {:key :v}}
+           :media-mode {:key :grave_accent_and_tilde}
   }
   :simlayers {
               :launch-mode {:key :z}

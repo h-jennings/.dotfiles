@@ -38,20 +38,22 @@ nnoremap <leader>/ :nohlsearch<CR>
 " File actions
 nnoremap <leader>w <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
 xnoremap <leader>w <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
-xnoremap <leader>w <Cmd>call VSCodeNotify('workbench.action.files.save')<CR>
 nnoremap <leader>q <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
 xnoremap <leader>q <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
 nnoremap <leader>cg <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
 xnoremap <leader>cg <Cmd>call VSCodeNotify('workbench.action.closeEditorsInGroup')<CR>
-nnoremap <leader>to <Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>
 xnoremap <leader>to <Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>
+nnoremap <leader>to <Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>
 
 " Code actions
 nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 nnoremap gy <Cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
+nnoremap gi <Cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>
 nnoremap gH <Cmd>call VSCodeNotify('editor.action.showDefinitionPreviewHover')<CR>
 nnoremap <leader>d <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
 xnoremap <leader>d <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
+nnoremap <leader>ca <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
+xnoremap <leader>ca <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
 nnoremap <leader>gn <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
 xnoremap <leader>gn <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
 nnoremap <leader>rn <Cmd>call VSCodeNotify('editor.action.rename')<CR>
@@ -63,40 +65,29 @@ nnoremap <leader>pfw <Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'q
 " File Navigation
 
 nnoremap <leader>ff <Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>
-nnoremap <leader>p <Cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>
 nnoremap <leader>P <Cmd>call VSCodeNotify('workbench.action.showCommands')<CR>
 nnoremap <leader>o <Cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')<CR>
 xnoremap <leader>o <Cmd>call VSCodeNotify('workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup')<CR>
 nnoremap <leader>O <Cmd>call VSCodeNotify('workbench.action.closeEditorsInOtherGroups')<CR>
 
+" Search
+nnoremap <leader>F <Cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>
+nnoremap <leader>sf <Cmd>call VSCodeNotify('search.action.openNewEditor', { 'query': '.', 'triggerSearch': 'true', 'focusResults': 'false', 'includes': '${fileBasenameNoExtension}*', 'regexp': 'true', 'showIncludesExcludes': 'true' })<CR>
+
+
+" UI
 nnoremap - <Cmd>call VSCodeNotify('revealInExplorer')<CR>
 xnoremap - <Cmd>call VSCodeNotify('revealInExplorer')<CR>
 nnoremap <leader>b <Cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
 xnoremap <leader>b <Cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
 nnoremap <leader>B <Cmd>call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<CR>
 xnoremap <leader>B <Cmd>call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<CR>
-nnoremap <leader>gs <Cmd>call VSCodeNotify('workbench.scm.focus')<CR>
-xnoremap <leader>gs <Cmd>call VSCodeNotify('workbench.scm.focus')<CR>
+nnoremap <leader>gs <Cmd>call VSCodeNotify('gitlens.showQuickRepoStatus')<CR>
+xnoremap <leader>gs <Cmd>call VSCodeNotify('gitlens.showQuickRepoStatus')<CR>
+nnoremap <leader>sd <Cmd>call VSCodeNotify('gitlens.diffWithPrevious')<CR>
+xnoremap <leader>sd <Cmd>call VSCodeNotify('gitlens.diffWithPrevious')<CR>
 nnoremap <leader>` <Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
 xnoremap <leader>` <Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
-
-" Better window navigation
-" Left
-nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
-xnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
-
-" Right
-nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
-xnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
-
-" Down
-nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
-xnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBelowGroup')<CR>
-
-" Up
-nnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
-xnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
-
 
 " Commenting
 xmap gc  <Plug>VSCodeCommentary
@@ -115,3 +106,21 @@ function! ExecuteMacroOverVisualRange()
   echo "@".getcmdline()
   execute ":'<,'>normal @".nr2char(getchar())
 endfunction
+
+function! s:manageEditorSize(...)
+    let count = a:1
+    let to = a:2
+    for i in range(1, count ? count : 1)
+        call VSCodeNotify(to ==# 'increase' ? 'workbench.action.increaseViewSize' : 'workbench.action.decreaseViewSize')
+    endfor
+endfunction
+
+" Sample keybindings. Note these override default keybindings mentioned above.
+nnoremap <C-w>> <Cmd>call <SID>manageEditorSize(v:count, 'increase')<CR>
+xnoremap <C-w>> <Cmd>call <SID>manageEditorSize(v:count, 'increase')<CR>
+nnoremap <C-w>+ <Cmd>call <SID>manageEditorSize(v:count, 'increase')<CR>
+xnoremap <C-w>+ <Cmd>call <SID>manageEditorSize(v:count, 'increase')<CR>
+nnoremap <C-w>< <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>
+xnoremap <C-w>< <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>
+nnoremap <C-w>- <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>
+xnoremap <C-w>- <Cmd>call <SID>manageEditorSize(v:count, 'decrease')<CR>

@@ -1,5 +1,11 @@
-.DS_Store
+# dependencies
 /node_modules
-/sessions
-/spell
-.netrwhist
+/.pnp
+.pnp.js
+
+# misc
+.DS_Store
+*.pem
+
+# auto generated
+/plugin/packer_compiled.lua
