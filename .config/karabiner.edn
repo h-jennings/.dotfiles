@@ -23,6 +23,7 @@
                         end tell
                 '"
   }
+  :applications { :roam ["^com\\.roam-research\\.desktop-app$"]}
   :layers {
            :caps-mode {:key :caps_lock :alone {:key :escape}}
            :media-mode {:key :grave_accent_and_tilde}
@@ -41,6 +42,14 @@
       :des "Single key remaps"
       :rules [
         [:page_up :fn]
+      ]
+    }
+    {
+      :des "Roam key remaps"
+      :rules [
+        :roam
+        [:!Copen_bracket :!Cleft_arrow]
+        [:!Cclose_bracket :!Cright_arrow]
       ]
     }
     {
@@ -92,8 +101,9 @@
       :rules [
         :launch-mode
         [:g [:open "/Applications/Google Chrome.app"]]
+        [:a [:open "/Applications/Alacritty.app"]]
         [:d [:open "/Applications/Discord.app"]]
-        [:s [:open "/Applications/Spotify.app"]]
+        [:s [:open "/Applications/Slack.app"]]
         [:c [:open "/Applications/Visual Studio Code.app"]]
         [:p [:open "/Applications/1Password 7.app"]]
       ]

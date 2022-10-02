@@ -50,8 +50,6 @@ nnoremap gr <Cmd>call VSCodeNotify('editor.action.goToReferences')<CR>
 nnoremap gy <Cmd>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
 nnoremap gi <Cmd>call VSCodeNotify('editor.action.goToImplementation')<CR>
 nnoremap gH <Cmd>call VSCodeNotify('editor.action.showDefinitionPreviewHover')<CR>
-nnoremap <leader>d <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
-xnoremap <leader>d <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
 nnoremap <leader>ca <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
 xnoremap <leader>ca <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
 nnoremap <leader>gn <Cmd>call VSCodeNotify('editor.action.marker.next')<CR>
@@ -84,10 +82,23 @@ nnoremap <leader>B <Cmd>call VSCodeNotify('workbench.action.toggleActivityBarVis
 xnoremap <leader>B <Cmd>call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<CR>
 nnoremap <leader>gs <Cmd>call VSCodeNotify('gitlens.showQuickRepoStatus')<CR>
 xnoremap <leader>gs <Cmd>call VSCodeNotify('gitlens.showQuickRepoStatus')<CR>
-nnoremap <leader>sd <Cmd>call VSCodeNotify('gitlens.diffWithPrevious')<CR>
-xnoremap <leader>sd <Cmd>call VSCodeNotify('gitlens.diffWithPrevious')<CR>
 nnoremap <leader>` <Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
 xnoremap <leader>` <Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
+
+" Debugger
+nnoremap <leader>ds <Cmd>call VSCodeNotify('workbench.action.debug.start')<CR>
+xnoremap <leader>ds <Cmd>call VSCodeNotify('workbench.action.debug.start')<CR>
+nnoremap <leader>dr <Cmd>call VSCodeNotify('workbench.action.debug.restart')<CR>
+xnoremap <leader>dr <Cmd>call VSCodeNotify('workbench.action.debug.restart')<CR>
+nnoremap <leader>D <Cmd>call VSCodeNotify('workbench.action.debug.disconnect')<CR>
+xnoremap <leader>D <Cmd>call VSCodeNotify('workbench.action.debug.disconnect')<CR>
+nnoremap <leader>tl <Cmd>call VSCodeNotify('editor.debug.action.addLogPoint')<CR>
+xnoremap <leader>tl <Cmd>call VSCodeNotify('editor.debug.action.addLogPoint')<CR>
+nnoremap <leader>tb <Cmd>call VSCodeNotify('editor.debug.action.toggleBreakpoint')<CR>
+xnoremap <leader>tb <Cmd>call VSCodeNotify('editor.debug.action.toggleBreakpoint')<CR>
+nnoremap <leader>sd <Cmd>call VSCodeNotify('workbench.debug.action.focusRepl')<CR>
+xnoremap <leader>sd <Cmd>call VSCodeNotify('workbench.debug.action.focusRepl')<CR>
+
 
 " Commenting
 xmap gc  <Plug>VSCodeCommentary
