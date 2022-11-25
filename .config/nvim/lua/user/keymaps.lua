@@ -34,8 +34,9 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":NeoTreeShowToggle<cr>", opts)
+
+keymap("n", "<leader>cl", ":TZAtaraxis<cr>", opts)
 
 -- Diagnostics
 keymap("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)

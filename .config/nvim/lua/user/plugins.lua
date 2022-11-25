@@ -45,9 +45,7 @@ return packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 
 	-- Colorschemes
-	-- use "lunarvim/colorschemes"
 	use("p00f/alabaster_dark.nvim")
-	use("projekt0n/github-nvim-theme")
 
 	use("norcalli/nvim-colorizer.lua")
 
@@ -106,7 +104,18 @@ return packer.startup(function(use)
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- NVIM Tree
-	use("kyazdani42/nvim-tree.lua")
+	-- use("kyazdani42/nvim-tree.lua")
+	use({
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+		},
+	})
+
+  -- Zen mode
+  use("Pocco81/true-zen.nvim")
 
 	-- Statusline
 	use("nvim-lualine/lualine.nvim")
